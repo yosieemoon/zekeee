@@ -34,19 +34,54 @@ getgenv().Config = {
         Sprinklers = false, -- Auto-place sprinklers you own for the growth boost
         AutoWater = false, -- Auto water decaying plants to revive them (skips mutated if Keep Mutated is on)
         Upgrade = false, -- Only setting that digs grown plants: at the cap, swap the worst for a 1.5x-better in-stock seed (off = never touch your plants)
-        KeepMutated = true, -- Never shovel mutated/variant plants
+        KeepMutated = false, -- Never shovel mutated/variant plants
         Purge = {}, -- Always shovel these on sight (ignores Keep Mutated / Auto Upgrade)
-        PlantLimits = {}, -- Max of each seed type to keep — over the cap, extras get shovelled (empty = no per-type cap)
+        PlantLimits = {
+            Cherry = 0,
+            Apple = 0,
+            ["Baby Cactus"] = 0,
+            Bamboo = 0,
+            Carrot = 0,
+            Blueberry = 0,
+            Strawberry = 0,
+            Mango = 0,
+            Tomato = 0,
+            Tulip = 0,
+        }, -- Max of each seed type to keep — over the cap, extras get shovelled (empty = no per-type cap)
     },
     AutoBuySeeds = {
         Enabled = true, -- Buy seeds from the seed shop
-        Mode = "All", -- Buy any in-stock seed, or only the selected list
-        Seeds = {}, -- Seed → max to own (counts seeds already held; 0 / empty = unlimited)
+        Mode = "Selected", -- Buy any in-stock seed, or only the selected list
+        Seeds = {
+            Rainbow = 0,
+            Tulip = 0,
+            Tomato = 0,
+            Strawberry = 0,
+            Pineapple = 0,
+            ["Poison Apple"] = 0,
+            ["Moon Bloom"] = 0,
+            Gold = 0,
+            ["Dragon's Breath"] = 0,
+            ["Ghost Pepper"] = 0,
+            Bamboo = 0,
+            Apple = 0,
+            ["Baby Cactus"] = 0,
+            Blueberry = 0,
+            Carrot = 0,
+        }, -- Seed → max to own (counts seeds already held; 0 / empty = unlimited)
     },
     AutoBuyGears = {
         Enabled = true, -- Buy gears from the gear shop
-        Mode = "All", -- Buy any in-stock gear, or only the selected list
-        Gears = {}, -- Gear names to buy when mode is Selected
+        Mode = "Selected", -- Buy any in-stock gear, or only the selected list
+        Gears = {
+            "Super Sprinkler",
+            "Super Watering Can",
+            "Supersize Mushroom",
+            "Teleporter",
+            "Super Pet Teleporter",
+            "Legendary Sprinkler",
+            "Rare Sprinkler",
+        }, -- Gear names to buy when mode is Selected
     },
     AutoBuySlot = {
         Enabled = true, -- Buy garden plot expansions when affordable
@@ -67,7 +102,7 @@ getgenv().Config = {
     },
     AutoSell = {
         Enabled = true, -- Automatically sell fruit
-        Mode = "Selected", -- Sell whole inventory (minus blacklist), or only the selected list
+        Mode = "Inventory", -- Sell whole inventory (minus blacklist), or only the selected list
         Fruits = {
             "Acorn",
             "Apple",
@@ -187,5 +222,6 @@ getgenv().Config = {
         FPSCap = 10, -- Lock the Roblox client FPS
     },
 };
+
 getgenv().scriptkey="cosNmLXahBWtMvJCbLKmBUCpXkSEcLIz"
 loadstring(game:HttpGet("https://zekehub.com/scripts/GAG2/Main.lua"))()
